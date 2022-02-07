@@ -58,7 +58,7 @@ There's a full example in our notebook example.ipynb.
 The quality of a candidate counterfactual `z` for the starting point `x` is called `fitness` (to be maximized).
 The fitness implemented in CoGS is:
 ```
--1*{0.5*gower_distance(z,x) + 0.5*L0(z,x) + int(f(z)!=desired_class)}
+-1*{0.5*gower_distance(z,x) + 0.5*L0(z,x) + int(bbm.predict(z)!=desired_class)}
 ```
 which takes values between `(-inf,0)` (the closer to `0`, the better).
 You can change the fitness function in `cogs/fitness.py` to any you like, as long as maximization is pursued. 
