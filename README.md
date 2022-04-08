@@ -5,6 +5,8 @@ CoGS is intended to be a baseline search algorithm for the discovery of counterf
 As the name suggests, CoGS is a *genetic algorithm*: it employs a population of candidate counterfactuals and does not require the machine learning model for which counterfactuals are sought to expose gradients.
 CoGS is implemented in Python for ease of use, and heavily relies on NumPy for speed.
 
+Colab example: https://colab.research.google.com/drive/1HQ4wcViJ5YV6w648yUtmiCoa2fGj4ftE
+
 ## Reference
 Please consider citing the paper for which CoGS has been developed:
 ```
