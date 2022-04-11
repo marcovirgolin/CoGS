@@ -27,7 +27,7 @@ Clone this repository, then `pip install .` from within it.
 ## Usage
 CoGS is relatively simple to setup and run. 
 Here's an example:
-```
+```python
 cogs = Evolution(
         # hyper-parameters of the problem (required!)
         x=x,  # the starting point, for which the black-box model gives an undesired class prediction
@@ -59,7 +59,7 @@ There's a full example in our notebook example.ipynb.
 ### Fitness function
 The quality of a candidate counterfactual `z` for the starting point `x` is called `fitness` (to be maximized).
 The fitness implemented in CoGS is:
-```
+```python
 -1*{0.5*gower_distance(z,x) + 0.5*L0(z,x) + int(bbm.predict(z)!=desired_class)}
 ```
 which takes values between `(-inf,0)` (the closer to `0`, the better).
