@@ -29,14 +29,14 @@ CoGS is relatively simple to setup and run.
 Here's an example:
 ```python
 cogs = Evolution(
-        # hyper-parameters of the problem (required!)
+        """ hyper-parameters of the problem (required!) """
         x=x,  # the starting point, for which the black-box model gives an undesired class prediction
         fitness_function=gower_fitness_function,  # a classic fitness function for counterfactual explanations
         fitness_function_kwargs={'blackbox':bbm,'desired_class': desired_class},  # bbm is the black-box model, these params are necessary
         feature_intervals=feature_intervals,  # intervals within which the search operates
         indices_categorical_features=indices_categorical_features,  # the indices of the features that are categorical
         plausibility_constraints=pcs, # can be "None" if no constraints need to be set
-        # hyper-parameters of the evolution (all optional)
+        """ hyper-parameters of the optimization (all optional) """
         evolution_type='classic', # the type of evolution, classic works well in general and is relatively fast to execute
         population_size=1000,   # how many candidate counterfactual examples to evolve simultaneously
         n_generations=100,  # number of iterations for the evolution
@@ -45,7 +45,7 @@ cogs = Evolution(
         num_features_mutation_strength=0.25, # strength of random mutations for numerical features
         num_features_mutation_strength_decay=0.5, # decay for the hyper-param. above
         num_features_mutation_strength_decay_generations=[50,75,90], # when to apply the decay
-        # others
+        """ other optional hyper-parameters """
         verbose=True  # logs progress at every generation 
 )
 cogs.run()
