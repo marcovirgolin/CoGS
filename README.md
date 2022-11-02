@@ -35,7 +35,7 @@ cogs = Evolution(
         fitness_function_kwargs={'blackbox':bbm,'desired_class': desired_class},  # bbm is the black-box model, these params are necessary
         feature_intervals=feature_intervals,  # intervals within which the search operates
         indices_categorical_features=indices_categorical_features,  # the indices of the features that are categorical
-        plausibility_constraints=pcs, # can be "None" if no constraints need to be set
+        plausibility_constraints=pcs, # can be None if no constraints need to be set
         """ hyper-parameters of the optimization (all optional) """
         evolution_type='classic', # the type of evolution, classic works well in general and is relatively fast to execute
         population_size=1000,   # how many candidate counterfactual examples to evolve simultaneously
